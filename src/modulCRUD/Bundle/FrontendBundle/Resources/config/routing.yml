@@ -1,0 +1,43 @@
+modul_crud_frontend_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: modulCRUDFrontendBundle:Default:index }
+
+home:
+    path:     /home
+    defaults: { _controller: modulCRUDFrontendBundle:Page:home }
+
+about:
+    path:     /about
+    defaults: { _controller: modulCRUDFrontendBundle:Page:about }
+
+_send_us_message:
+    path:     /SendUsMessage
+    defaults: { _controller: modulCRUDFrontendBundle:ContactUs:new }
+
+latest_news:
+    path:     /latestNews
+    defaults: { _controller: modulCRUDFrontendBundle:News:latestNews }
+
+_press_release:
+    path:     /PressRelease
+    defaults: { _controller: modulCRUDFrontendBundle:News:PressRelease }
+
+_CSRProgram:
+    path:     /CSRProgram
+    defaults: { _controller: modulCRUDFrontendBundle:News:CSRProgram }
+
+_partner:
+    path:     /Partner
+    defaults: { _controller: modulCRUDFrontendBundle:BusinessPartner:Partner }
+
+_testimonies:
+    path:     /Testimonies
+    defaults: { _controller: modulCRUDFrontendBundle:BusinessPartner:Testimonies }
+
+_i_t_consultancy:
+    path:     /ITConsultancy
+    defaults: { _controller: modulCRUDFrontendBundle:Services:ITConsultancy }
+
+_i_t_services:
+    path:     /ITServices
+    defaults: { _controller: modulCRUDFrontendBundle:Services:ITServices }

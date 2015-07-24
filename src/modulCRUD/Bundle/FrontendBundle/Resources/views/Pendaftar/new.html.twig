@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Pendaftaran Baru</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li class="fa fa-plus-circle">
+        <a href="{{ path('pendaftar') }}">
+            Lihat Data Pendaftar
+        </a>
+    </li>
+</ul>
+{% endblock %}
