@@ -1,3 +1,7 @@
+modul_crud_back_end:
+    resource: "@modulCRUDBackEndBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
 modul_crud_frontend:
     resource: "@modulCRUDFrontendBundle/Resources/config/routing.yml"
     prefix:   /

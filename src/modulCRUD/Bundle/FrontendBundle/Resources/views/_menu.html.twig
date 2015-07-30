@@ -1,0 +1,86 @@
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+		  </button>
+                <li title="Login">
+                    <a href="{{ path('home')}}">
+                    <img src="{{asset('img/icon.png')}}" /></a>
+		</li>
+                </div>
+		
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="nopad" title="Login"><a href="javascript:void(0);" id="openlogin">
+				<a class="navbar-brand" href="{{ path('modul_crud_back_end_homepage')}}">
+				<img src="{{ asset('img/login.png') }}" /></a>
+			</li>
+		  </ul> 
+		 
+		  
+		 
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="{{ path('contactus')}}">Contact Us</a></li>
+				<li><a href="{{ path('_send_us_message')}}">Send Us Message</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		  
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Careers <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="{{ path('pendaftar')}}">Career</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		  
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="{{ path('latest_news')}}">Latest News</a></li>
+				<li><a href="{{ path('_press_release')}}">Press Release</a></li>
+				<li><a href="{{ path('_CSRProgram')}}">CSR Programs</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		   
+		  
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Business Partner <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="{{ path('_partner')}}">Partner</a></li>
+				<li><a href="{{ path('_testimonies')}}">Testimonies</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		 
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="{{ path('_i_t_consultancy')}}">IT Consultancy</a></li>
+				<li><a href="{{ path('_i_t_services')}}">IT Services</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		  
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="{{ path('about')}}">Company Profile</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->

@@ -3,7 +3,7 @@ modul_crud_frontend_homepage:
     defaults: { _controller: modulCRUDFrontendBundle:Default:index }
 
 home:
-    path:     /home
+    path:     /
     defaults: { _controller: modulCRUDFrontendBundle:Page:home }
 
 about:

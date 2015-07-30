@@ -1,0 +1,80 @@
+{% extends "::base.html.twig" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+	<head>
+    <meta charset="utf-8">
+    <title>Login Facebali</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 50px; 
+      }
+      .container {
+        width: 550px;
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 30px;
+        margin: 0 -20px; 
+        -webkit-border-radius: 10px 10px 10px 10px;
+           -moz-border-radius: 10px 10px 10px 10px;
+                border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      .login-form {
+        margin-left: 30px;
+      }
+
+      legend {
+        margin-right: -50px;
+        font-weight: bold;
+          color: #404040;
+      }
+
+    </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="login-form">
+          <form method="POST" action="{{ path('modul_crud_back_end_homepage')}}">
+                <h3 class="form-title">Sign In to your Account</h3>
+                
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"></span>
+                        <input type="text" class="form-control" placeholder="Username" name="username" aria-describedby="basic-addon1" data-trigger="change" data-required="true" required>
+                      </div>
+               <br>
+                       <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"></span>
+                        <input type="password" class="form-control" placeholder="Password" name="password" aria-describedby="basic-addon1" data-trigger="change" data-required="true" required>
+                      </div>
+               <br>
+                    
+                <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+                <a href="{{ path('modul_crud_back_end_sign_up')}}"> Sign Up</a> 
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container -->
+  
+  
+</body>
+                      
+{% endblock %}

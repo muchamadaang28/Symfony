@@ -1,0 +1,11 @@
+modul_crud_back_end_homepage:
+    path:     /login
+    defaults: { _controller: modulCRUDBackEndBundle:Default:index }
+
+modul_crud_back_end_sign_up:
+    path:     /signup
+    defaults: { _controller: modulCRUDBackEndBundle:Default:signup }
+
+modul_crud_back_end_dasboard:
+    path:     /dasboard
+    defaults: { _controller: modulCRUDBackEndBundle:Default:dasboard }

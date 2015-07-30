@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  {{ include('modulCRUDBackEndBundle::_headerAdmin.html.twig') }}
+  {{ include('modulCRUDBackEndBundle::_menuAdmin.html.twig') }}
+  {% block body %}
+      {% if nama is not defined %}
+          {{ nama }}
+      {% endif %}
+  {% endblock %}
+</html>

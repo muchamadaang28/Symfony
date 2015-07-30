@@ -1,0 +1,100 @@
+{% extends "::base.html.twig" %}
+{% block title %}Sign Up{% endblock %}
+{% block body %}
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up Facebali</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 50px; 
+      }
+      .container {
+        width: 550px;
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 30px;
+        margin: 0 -20px; 
+        -webkit-border-radius: 10px 10px 10px 10px;
+           -moz-border-radius: 10px 10px 10px 10px;
+                border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      .login-form {
+        margin-left: 30px;
+      }
+
+      legend {
+        margin-right: -50px;
+        font-weight: bold;
+          color: #404040;
+      }
+
+    </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="row">
+        <div class="login-form">
+          <form method="POST" action="{{ path('modul_crud_back_end_sign_up')}}">
+              <div class="section-title">
+                  <h2>Get your Account Here</h2>
+              </div>
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"></span>
+                        <input type="email" class="form-control" placeholder="Email" name="email" aria-describedby="basic-addon1" required>
+                      </div>
+               <br>
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"></span>
+                        <input type="text" class="form-control" placeholder="User Name" name="username" aria-describedby="basic-addon1" required>
+                      </div>
+               <br>
+                     <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"></span>
+                        <input type="text" class="form-control" placeholder="First Name" name="firstname" aria-describedby="basic-addon1" required>
+                      </div>
+               <br>
+                       <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"></span>
+                        <input type="password" id="password" class="form-control" placeholder="Password" name="password" aria-describedby="basic-addon1" required>
+                      </div>
+               <br>
+                    <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"></span>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" name="password" aria-describedby="basic-addon1" data-equalto="#password" required>
+                    </div>
+                   <br>
+                    {% if error is defined %}
+                        {{ error }}
+                    {% endif %}
+                    
+                <a href="{{ path('modul_crud_back_end_homepage')}}" class="btn btn-large pull-left btn-primary" type="submit">Back To Login</a>
+                <button class="btn btn-success pull-right green-btn" type="submit">Create Acount</button>
+                
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /container -->
+ 
+
+</body>
+                      
+{% endblock %}
