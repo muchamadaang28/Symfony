@@ -8,6 +8,7 @@ use modulCRUD\Bundle\BackEndBundle\Entity\Users;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
@@ -20,13 +21,6 @@ class DefaultController extends Controller
             // last username entered by the user
             $lastUsername = $authenticationUtils->getLastUsername();
             
-            //Mengambil session
-            $session = new Session();
-            // set and get session attributes
-            $session->set('username',$username);
-            
-            $session->start();
-            
             $username=$request->get('username');
             $password=$request->get('password');
             $encpass = sha1(strtoupper($username).":".strtoupper($password));
@@ -36,9 +30,14 @@ class DefaultController extends Controller
             $user = $repository->findOneBy(array('username'=>$username, 'password'=>$encpass));
             if($user){
 //              Ketika berhasil Login
+            //Mengambil session
+            $session = $request->getSession();
+            // set and get session attributes
+            $session->set('username',$user->getFirstName());
+            
                 return $this->render('modulCRUDBackEndBundle:Default:dasboard.html.twig',
                         array(
-                            'name'=>$user->getFirstName(),
+                            'nama'=>$user->getFirstName(),
                             'last_username' => $lastUsername,
                             'error'         => $error,
                         )
@@ -93,12 +92,34 @@ class DefaultController extends Controller
     
     public function dasboardAction()
     {
-       
-      //  $name = $this->get('session')->get('username');
-        $name2 = $this->get('username')->set('usename', $username);
-        
+        $session = $this->getRequest()->getSession();
         $name = $session->get('username');
         
-        return $this->render('modulCRUDBackEndBundle:Default:dasboard.html.twig', array('nama'=>$name,'nama2'=>$nama2));
+      //  $name = $this->get('session')->get('username');
+//        $name2 = $this->get('username')->set('usename', $username);
+//        $name = $session->get('username');
+        if(empty($name))
+        {
+            echo "<script type='text/javascript'>alert('Silahkan Login terlebih dahulu')</script>";
+//            return $this->redirectToRoute('homepage');
+            $response = $this->forward('modulCRUDBackEndBundle:Default:logout');
+            // ... further modify the response or return it directly
+            return $response;
+//            return new RedirectResponse($this->generateUrl('login'));
+            //return $this->redirectToRoute($this->generateUrl('login'));
+//           return $this->render('modulCRUDBackEndBundle:Default:index.html.twig');
+            //return redirect($this->generateUrl('modul_crud_back_end_logout'));
+        } 
+        return $this->render('modulCRUDBackEndBundle:Default:dasboard.html.twig', array('nama'=>$name));
+    }
+    
+    public function logoutAction()
+    {
+        //$session = $this->getRequest()->getSession();
+//      $name = $session->get('username');
+        //$session->remove('username');
+        session_destroy();
+//        return new RedirectResponse($this->generateUrl('login'));
+        return $this->render('modulCRUDBackEndBundle:Default:index.html.twig');
     }
 }

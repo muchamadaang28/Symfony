@@ -9,3 +9,7 @@ modul_crud_back_end_sign_up:
 modul_crud_back_end_dasboard:
     path:     /dasboard
     defaults: { _controller: modulCRUDBackEndBundle:Default:dasboard }
+
+modul_crud_back_end_logout:
+    path:     /logout
+    defaults: { _controller: modulCRUDBackEndBundle:Default:logout }

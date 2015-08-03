@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="modulCRUD\Bundle\FrontendBundle\Entity\BusinessPartner" table="business_partner">
+    <id name="idBusinessPartner" type="integer" column="id_business_partner">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="lang" type="string" column="lang" length="5" nullable="true"/>
+    <field name="partnerName" type="string" column="partner_name" length="255" nullable="false"/>
+    <field name="description" type="string" column="description" length="255" nullable="true"/>
+    <field name="descriptionId" type="string" column="description_id" length="255" nullable="true"/>
+    <field name="descriptionJp" type="string" column="description_jp" length="255" nullable="true"/>
+    <field name="address" type="string" column="address" length="255" nullable="true"/>
+    <field name="idCity" type="integer" column="id_city" nullable="true"/>
+    <field name="idCountry" type="integer" column="id_country" nullable="true"/>
+    <field name="logoFileName" type="string" column="logo_file_name" length="255" nullable="false"/>
+    <field name="linkUrl" type="string" column="link_url" length="155" nullable="true"/>
+    <field name="isPublished" type="boolean" column="is_published" nullable="false"/>
+    <field name="isPublishedAtHomepage" type="boolean" column="is_published_at_homepage" nullable="false"/>
+    <field name="displayOrder" type="integer" column="display_order" nullable="false"/>
+    <field name="createdOn" type="datetime" column="created_on" nullable="true"/>
+    <field name="createdBy" type="integer" column="created_by" nullable="true"/>
+    <field name="modifiedOn" type="datetime" column="modified_on" nullable="true"/>
+    <field name="modifiedBy" type="integer" column="modified_by" nullable="true"/>
+  </entity>
+</doctrine-mapping>

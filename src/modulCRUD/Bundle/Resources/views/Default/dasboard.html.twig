@@ -3,7 +3,7 @@
   {{ include('modulCRUDBackEndBundle::_headerAdmin.html.twig') }}
   {{ include('modulCRUDBackEndBundle::_menuAdmin.html.twig') }}
   {% block body %}
-      {% if nama is not defined %}
+      {% if nama is defined %}
           {{ nama }}
       {% endif %}
   {% endblock %}
